@@ -39,6 +39,11 @@ class ProductsFragment : Fragment() {
         viewModel.productsData.observe(viewLifecycleOwner) { products ->
             productsAdapter.submitList(products)
         }
+
+        viewModel.addButtonVisibiltyData.observe(viewLifecycleOwner) { visibility ->
+            binding.fabAdd.visibility = visibility
+
+        }
     }
 
     private fun setRecyclerView() {
